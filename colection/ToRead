@@ -1,0 +1,39 @@
+
+// Reference: https://www.journaldev.com/16635/collections-class-java-util-collections
+
+Collections is a class in java to work with Collections. (Ya ya we have Collection interface too)
+methods operating on or returning Collections.
+
+Supports polymorphic algorithms (i.e achieve same functionality using diff data structures)
+
+It has all the Static methods in it. (Thats why we call them using ``Collections.sort()`` )
+
+Methods include:											note: ~ means optional argument
+
+			sort(List l, ~Comparator c)             // Sorts the List according to provided custom comparator or 
+														natural comparsion if not provided
+		
+				// Collections.sort(li);
+				// Collections.sort(li, Comparator.reverseOrder())
+				
+T			max(Colleciton c, ~Comparator c)        // Returns max element in collection
+			
+T			min(Collection c, ~Comparator c)       	// Returns min element in collection
+		
+int			binarySearch(Collections <E extends comparator> , k key)     // returns index of the specified element in the list
+		
+boolean		addAll(Collection c, elements,,,)  		// adds all the elements in the list
+		
+int			frequency(Collection c, element)     	// Returns frequency of the element in the specified list
+
+void        swap(list, i , j)             			// Swapping ith element with jth element
+		
+			copy(Collection dest, Collection src)	// copies the elements of 
+		
+			fill(Collection c, element)            	// Replaces all the elements of Collection with
+											   		// specified elements
+											   
+int			indexOfSubList(List fullList, List sublist)   // Returns the index of the occurence of sublist in the fulllist
+				// lastIndexOfSublist() also		
+									   		
+Queue		asLifoQueue(Dequeue d)
