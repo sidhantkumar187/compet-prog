@@ -1,16 +1,16 @@
 package backtracking;
 
-/* BACKTRACKING:   (Ref : Notebook (Hare Wali))
+/* BACKTRACKING:   (Ref : Notebook (Hare Waali))
  * 					Taking one possible Decision and then further taking decision for next step
  * 				
- * 				If at a step a decision is reaching to end then it is a possiblity(for premutation case)
+ * 				If at a step a decision is reaching to end then it is a possibility(for permutation case)
  *                                      for N-Queen case if we can't make further decision in any step
  *              then backtrack to it's previous step and try it for another possible decision and further 
  *              based on this decision make decision in the next steps
  *              
  *              By steps i mean Row in case of N-Queen problem
- */
-/*
+ *
+ *
  * 										 ("abcd","")
  * 											/
  * 										   /

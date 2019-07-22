@@ -3,6 +3,7 @@ package hackerank;
 // ----------------- Not to Study ---------------------------
 
 import java.io.*;
+import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -11,7 +12,7 @@ public class AnagramSubstring {
     public static void main(String[] args) throws IOException {
         
     	String raw = "ifafi";
-    	//            0123
+    	//            01234
     	int n = raw.length();
     	
     	int ana = 0;
@@ -32,15 +33,15 @@ public class AnagramSubstring {
     		}											// i.e ((n-1) * n) / 2
     	}
     	
-//    	System.out.print("\n[");
-//    	for (int i = 0; i < 26; i++) {
-//    		System.out.print((char)('a'+i)+", ");
-//    	}
-//    	System.out.print("]\n");
-//    	
-//    	for (int temp[] : mul) {
-//    		System.out.println(Arrays.toString(temp));
-//    	}
+    	System.out.print("\n[");
+    	for (int i = 0; i < 26; i++) {
+    		System.out.print((char)('a'+i)+", ");
+    	}
+    	System.out.print("]\n");
+    	
+    	for (int temp[] : mul) {
+    		System.out.println(Arrays.toString(temp));
+    	}
     	
     	// Counting anagrams of length greater than 2
     	HashMap<String,Integer> hm = new HashMap<String,Integer>();

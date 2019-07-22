@@ -71,14 +71,14 @@ public class Sort {
 		}
 	}
 	// This is the Partition agent cum shifter
-	// It always shifts the Smaller Elements to Left and Greater to Right, Pivot to exact position
+	// It always shifts the Smaller Elements to Left and Greater to Right, Pivot to exact position (pivot picked from right end)
 	static int partitionAgent(int arr[],int start, int end) {
 		
 		int piv = arr[end];
-		int i = start -1;                     // i = -1 (for base case)
+		int i = start -1;                     // i = -1 (for base case)        ~only when start is 0
 		int j;
 		
-		for (j = start; j <= end-1;j++) {
+		for (j = start; j <= end-1; j++) {
 			
 			if (arr[j] <= piv) {
 				

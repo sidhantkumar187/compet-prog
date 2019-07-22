@@ -1,0 +1,8 @@
+-------------  Numbers ---------------------------------
+
+  A n digit number has n*(n+1)/2 sub-numbers
+  
+  Pairs from n elements possible are : n*(n-1)/2
+  
+  A number is from Fibonacci sequence if :  5*(no)^2 - 4 || 5*(no)^2 + 4
+  is/are perfect square (Note : 0,1)

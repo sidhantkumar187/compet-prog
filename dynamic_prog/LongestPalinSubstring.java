@@ -86,5 +86,3 @@ public class LongestPalinSubstring
 	} 
 } 
 
-//This code is contributed by Sumit Ghosh 
-
