@@ -6,6 +6,63 @@ import java.io.InputStreamReader;
 import java.util.Arrays;
 import java.util.HashMap;
 
+/* Problem Statement:   Expense Sharing Problem
+ * 
+ * Give "n" number of person staying together. There are lot of expenses for that group.
+ * But at a time only one person pays the whole expense for all. But the expense is divided equally and kept tracked.
+ * U need to figure out how much a person "A" has to give to person "B" at every stage.
+ * 
+ * [  Console Menu would look like: 
+	 * Main menu. Press:
+	 * 1. for Add expense
+	 * 2. for Show expenses
+	 * 3. for Exit 
+ * ]
+ * 
+ * Test Case:
+ * 3
+ * A
+ * B
+ * C
+ * 1. Add expense
+ * 2. Show expenses
+ * 3. Exit
+ * 1
+ * A 300
+ * 1. Add expense
+ * 2. Show expenses
+ * 3. Exit
+ * 2
+ *     A   B   C                                          ~ Main output
+ * A   0   0   0
+ * B  100  0   0
+ * C  100  0   0
+ * A 300										~ Expense added
+ * 1. Add expense
+ * 2. Show expenses
+ * 3. Exit
+ * 1
+ * B 600										~ Expense added
+ * 2
+ *     A    B    C
+ * A   0   100   0
+ * B   0    0    0
+ * C  100  200   0
+ * 3                                             ~ Exit 
+ * 
+ * ---------------Explanation---------------------------------
+ * As "A" gave 300
+ * After that "B" and "C" need to give 100 each to "A"
+ * 
+ * As "B" gave 600
+ * The two other now need to give 200 each to "B"
+ * But as "A" has paid earlier so "A"'s money owed by "B" would be cutting amount "A" need to pay to "B"
+ * 
+ * Thus, "A" need to give 100 to "A"
+ * and
+ * 		"C" need to give 200 to "B" and 100 to "A" as earlier
+ */
+
 public class RentSharing {
 
 	// Assume for case when "A" gave 300. Rest 2 persons will have to contribute 100 each 
