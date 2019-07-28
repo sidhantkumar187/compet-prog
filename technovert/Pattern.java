@@ -29,7 +29,7 @@ public class Pattern {
 		// Lower portion
 		
 		for (int i = 0; i < n-1; i++) {
-			// Left indentaion
+			// Left indentation
 			for (int sp = 0; sp < n-i-2; sp++) {
 				System.out.print(" ");
 			}

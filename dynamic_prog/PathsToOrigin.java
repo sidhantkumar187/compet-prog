@@ -25,7 +25,7 @@ public class PathsToOrigin
             return 1;              // So return 1 for this path
         if (m < 0 || n < 0)
             return 0;
-        String str = Integer.toString(n) + ":" + Integer.toString(m);   // Storing Cordinate point 
+        String str = Integer.toString(n) + ":" + Integer.toString(m);   // Storing Coordinate point 
         // as String n:m as key in HashMap to store down paths result of this point
         if (hm.containsKey(str)){
             return hm.get(str);         // If we have calculated paths from this point earlier then just return its result
@@ -34,6 +34,20 @@ public class PathsToOrigin
         hm.put(str,find_paths(n-1,m) + find_paths(n,m-1));
         
         return hm.get(str); 
+    }
+    
+    public static int paths_nodp(int n , int m){
+    	
+//    	System.out.println("paths_nodp( "+n+" , "+m+")");
+    	
+        if (n == 0 && m == 0)           // From that point through which this is called we reached to Destination(0,0)
+            return 1;              // So return 1 for this path
+        if (m < 0 || n < 0)
+            return 0;
+        
+        
+        
+        return paths_nodp(n-1,m) + paths_nodp(n,m-1); 
     }
      
 	public static void main (String[] args) throws IOException
@@ -47,8 +61,25 @@ public class PathsToOrigin
 	        int n = Integer.parseInt(str[0]);
 	        int m = Integer.parseInt(str[1]);
 	        
+	        float simp = (float)Math.pow(10, 6);
+	        
 	        hm.clear();
+	        long start = System.nanoTime();
+	        
 	        System.out.println(find_paths(n,m));
+	        
+	        long end = System.nanoTime();
+	        System.out.println("Time using Memorization "+(end - start));
+	        System.out.println(hm.toString());
+	        
+//	-----------------------------------------------------------------
+	        start = System.nanoTime();
+	        
+	        System.out.println(paths_nodp(n,m));
+	        
+	        end = System.nanoTime();
+	        System.out.println("Time without Memo "+(end - start));
+	        
 	        tc--;
 	    }
 	  bf.close();

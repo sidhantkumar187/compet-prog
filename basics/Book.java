@@ -33,6 +33,9 @@ public class Book {
 		printAll(arr1,arr2,arr3);
 		printAll(arr1,arr2);
 		printAll();
+		
+		// final String ipv4Pattern = "(([01]?\\d\\d?|2[0-4]\\d|25[0-5])\\.){3}([01]?\\d\\d?|2[0-4]\\d|25[0-5])";
+		// final String ipv6Pattern = "([0-9a-f]{1,4}:){7}([0-9a-f]){1,4}";
 
 	}
 

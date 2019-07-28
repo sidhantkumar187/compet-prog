@@ -35,6 +35,15 @@ public class Driver {
 		System.out.println(Sort.selectionSort(arr3));
 		
 		System.out.println(Arrays.toString(arr3));
+		
+//      ------------------ Merge Sort --------------------------
+		System.out.println("----------------- Merge Sort -----------------------");
+		
+		int arr4[] = {4,2,1,76,54,3,9,10};
+		
+		System.out.println(Arrays.toString(arr4));
+		Sort.mergeSort(arr4, 0, arr4.length-1);
+		System.out.println(Arrays.toString(arr4));
 	}
 
 }
