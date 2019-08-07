@@ -3,13 +3,12 @@ package dynamic_prog;
 // Paths To Reach Origin (0,0) from given point
 
 import java.util.*;
-//import java.lang.*;
 import java.io.*;
 
 // Solved using Dynamic Programming (memorization + recursive)
 
 // from a cartesian point we have two ways to move toward origin:
-// Either n-1 , m or n , m-1
+// Either (n-1 , m) or (n , m-1)
 
 // Example:
 
@@ -60,8 +59,6 @@ public class PathsToOrigin
 	        
 	        int n = Integer.parseInt(str[0]);
 	        int m = Integer.parseInt(str[1]);
-	        
-	        float simp = (float)Math.pow(10, 6);
 	        
 	        hm.clear();
 	        long start = System.nanoTime();

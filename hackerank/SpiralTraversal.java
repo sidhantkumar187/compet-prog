@@ -9,11 +9,9 @@ package hackerank;
 * 					55 66 77 88
 * 					12 23 34 75
 * 
-* 				Spiral Traversal---
+* 				Zig-Zag Traversal---
 * 		
-* 					11 22 33 44
-* 					88 77 66 55
-* 					12 23 34 75
+* 					11 22 33 44 88 77 66 55 12 23 34 75
 * */
 public class SpiralTraversal {
 
@@ -30,13 +28,13 @@ public class SpiralTraversal {
 //						{5,6,7,8}};
 		
 		
-		int row = arr.length;
-		int col = arr[1].length;
+		int m = arr.length;
+		int n = arr[1].length;
 		
-		System.out.println("Rows: "+row+" col: "+col);
+		System.out.println("Rows: "+m+" col: "+n);
 		
-		for (int i=0;i<row;i++) {
-			for(int j = 0;j<col;j++) {
+		for (int i=0;i<m;i++) {
+			for(int j = 0;j<n;j++) {
 				System.out.print(arr[i][j]+" ");
 			}
 			System.out.println();
@@ -44,41 +42,48 @@ public class SpiralTraversal {
 		
 		System.out.println("Spiral Traversal: ");
 		
-		int count = 0;
-		int total = 0;
-		for(int i = 0; i<row/2; i++) {
-			
-			int j=0,down=0,left=0,up=0;
-			
-			for (j = count; j < col-count; j++,total++)
-				System.out.println(arr[i][j]);
-			j--;
-			
-			for (down = i+1; down < row-i; down++,total++)				// Going down
-				System.out.println(arr[down][j]);
-			down--;
-			
-			for (left = j-1; left >= col-j-1; left--,total++)		// Going left
-				System.out.println(arr[down][left]);
-			left++;
-			
-			for (up = down-1; up > i; up--,total++)						// Going up
-				System.out.println(arr[up][left]);
-			
-			count++;
-			if(total>=col*row)
-				break;
-		}
+		StringBuffer sb = new StringBuffer();
+        
+        int col_st, row_st, col_end, row_end;
+        col_st = 0; row_st = 0; col_end = n; row_end = m;
+        
+        int total = 0;
+        while (total < m*n){
+            
+            for (int i = col_st; i < col_end && total < m*n; i++){
+                sb.append(arr[row_st][i]+" ");
+                total++;
+            }
+                
+            for (int j = row_st+1; j < row_end && total < m*n; j++){
+                sb.append(arr[j][col_end-1]+" ");
+                total++;
+            }
+                
+            for (int k = col_end-2; k > col_st && total < m*n; k--){
+                sb.append(arr[row_end-1][k]+" ");
+                total++;
+            }
+            
+            for (int l = row_end-1; l > row_st && total < m*n; l--){
+                sb.append(arr[l][col_st]+" ");
+                total++;
+            }
+                
+                row_st++; col_st++; row_end--; col_end--;
+        }
+        
+        System.out.println(sb);
 		
 		System.out.println("Zig-Zag traversal");
 		
-		for (int i = 0; i<row; i++) {
-		for(int j = 0; j<col; j++) {
+		for (int i = 0; i<m; i++) {
+		for(int j = 0; j<n; j++) {
 			System.out.print(arr[i][j]+" ");
-			if (j == col -1 && i < row -1) {			// Whenever print pointer comes to the last column ( j == col - 1) except for last row
+			if (j == n -1 && i < m -1) {			// Whenever print pointer comes to the last column ( j == col - 1) except for last row
 				i++;									// Start traversing from end for the next row ( i++ )										
 				System.out.println();
-				for (int temp = col - 1; temp>=0;temp--) {
+				for (int temp = n - 1; temp>=0;temp--) {
 					System.out.print(arr[i][temp]+" ");
 				}
 			}
